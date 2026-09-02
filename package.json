@@ -1,18 +1,18 @@
 {
-  "name": "nohello.net",
-  "description": "please don't say just hello in chat",
+  "name": "yesmuppets.net",
+  "description": "no meeting starts before the muppets",
   "version": "1.0.0",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/nohello-net/site/"
+    "url": "https://github.com/sirredbeard/yesmuppetsnet/"
   },
   "type": "commonjs",
   "scripts": {
     "11ty": "yarn esr --cache ./node_modules/.bin/eleventy --config ./.eleventy.ts",
     "build": "yarn 11ty",
     "serve": "yarn 11ty --serve --port=8123",
-    "check-snapshots": "act -j check-snapshots -P ubuntu-latest=mcr.microsoft.com/playwright:v1.16.3 -W ./.github/local-workflows --reuse --artifact-server-path build-artifacts; yarn post-snapshots",
-    "update-snapshots": "act -j update-snapshots -P ubuntu-latest=mcr.microsoft.com/playwright:v1.16.3 -W ./.github/local-workflows --reuse --artifact-server-path build-artifacts; yarn post-snapshots",
+    "check-snapshots": "act -j check-snapshots -P ubuntu-latest=mcr.microsoft.com/playwright:v1.62.1-noble -W ./.github/local-workflows --reuse --artifact-server-path build-artifacts; yarn post-snapshots",
+    "update-snapshots": "act -j update-snapshots -P ubuntu-latest=mcr.microsoft.com/playwright:v1.62.1-noble -W ./.github/local-workflows --reuse --artifact-server-path build-artifacts; yarn post-snapshots",
     "post-snapshots": "./bin/post-snapshots.ts",
     "format": "prettier --write .",
     "lint": "eslint .",
@@ -24,12 +24,10 @@
     "typecheck:watch": "tsc --noEmit --watch",
     "ci:ui": "start-server-and-test serve 8123 test:ui",
     "ci:ui:update": "start-server-and-test serve 8123 test:ui:update",
-    "strings:push": "tx push",
-    "strings:pull": "tx pull",
     "postinstall": "patch-package"
   },
   "devDependencies": {
-    "@playwright/test": "^1.20.1",
+    "@playwright/test": "^1.62.1",
     "@types/glob": "^7.2.0",
     "@types/marked": "^4.0.3",
     "@types/mocha": "^9.1.0",
@@ -59,7 +57,8 @@
     "nunjucks": "^3.2.3",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
-    "sprintf-js": "^1.1.2"
+    "sprintf-js": "^1.1.2",
+    "typed.js": "^2.0.11"
   },
   "resolutions": {
     "@11ty/eleventy": "^1.0.0",

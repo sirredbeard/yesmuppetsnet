@@ -222,9 +222,8 @@ h1.name {
   text-decoration-color: #fff;
 }
 
-#strike {
-  text-decoration: line-through;
-  text-decoration-color: red;
+#cycle {
+  color: #4a90e2;
   display: inline;
 }
 

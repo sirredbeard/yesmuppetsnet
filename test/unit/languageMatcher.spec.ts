@@ -19,10 +19,10 @@ describe('languageMatcher', () => {
       assert.equal(result, '/en');
     });
 
-    it('de -> /de', () => {
+    it('de -> /en', () => {
       const result = languageMatcher(langs, base, undefined, 'de');
 
-      assert.equal(result, '/de');
+      assert.equal(result, '/en');
     });
 
     it('en-AU -> en', () => {
@@ -35,30 +35,6 @@ describe('languageMatcher', () => {
       const result = languageMatcher(langs, base, undefined, 'zh');
 
       assert.equal(result, '/en');
-    });
-
-    it('zh-cn -> /zh-cn', () => {
-      const result = languageMatcher(langs, base, undefined, 'zh-CN');
-
-      assert.equal(result, '/zh-cn');
-    });
-
-    it('pt-br -> /pt-br', () => {
-      const result = languageMatcher(langs, base, undefined, 'pt-BR');
-
-      assert.equal(result, '/pt-br');
-    });
-
-    it('pt-BR -> /pt-br', () => {
-      const result = languageMatcher(langs, base, undefined, 'pt-BR');
-
-      assert.equal(result, '/pt-br');
-    });
-
-    it('pt_BR -> /pt-br', () => {
-      const result = languageMatcher(langs, base, undefined, 'pt_BR');
-
-      assert.equal(result, '/pt-br');
     });
   });
 
@@ -81,16 +57,10 @@ describe('languageMatcher', () => {
       assert.equal(result, '/en');
     });
 
-    it('de -> /de', () => {
+    it('de -> /en', () => {
       const result = languageMatcher(langs, base, 'de');
 
-      assert.equal(result, '/de');
-    });
-
-    it('pt-br -> /pt-br', () => {
-      const result = languageMatcher(langs, base, 'pt-br');
-
-      assert.equal(result, '/pt-br');
+      assert.equal(result, '/en');
     });
   });
 });

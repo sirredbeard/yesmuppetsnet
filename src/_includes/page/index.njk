@@ -3,8 +3,8 @@
     <div class="hero">
       <div id="plsstop">
         <h1 class="name">
-          no
-          <span id="strike">hello</span>
+          yes
+          <span id="cycle">Kermit</span>
         </h1>
       </div>
       <span class="subtitle">{{ _("header.subtitle") }}</span>
@@ -100,39 +100,6 @@
     <p>
       {{ _md('footer.thanks') }}
     </p>
-    <p>
-    </p>
-
-    <section class="other-languages">
-      <p>
-        {{ _('footer.languages') }}
-      </p>
-
-      <ul>
-      {% for locale in locales %}
-        <li
-          ><a
-            href="{%- relocalizePath locale.path, page.url -%}"
-            class="lang-chooser"
-            data-lang="{{ locale.path }}"
-            hreflang="{{ locale.path }}"
-          >{{ locale.name }}</a
-        ></li>
-      {% endfor %}
-      </ul>
-    </section>
-
-    <script>
-      const langChoosers = document.querySelectorAll('.lang-chooser');
-
-      for (const langChooser of langChoosers) {
-        const lang = langChooser.dataset.lang;
-
-        langChooser.addEventListener('click', (evt) => {
-          localStorage.setItem('lang', lang);
-        });
-      }
-    </script>
   </footer>
 </div>
 
@@ -148,6 +115,6 @@
 whyyyyy = "url('{%- imageURL "./src/img/why.gif", { format: "webp", animated: true } -%}')"
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-<script src="/js/nohello.js"></script>
-<script src="/js/hello.js"></script>
+<script src="/js/vendor/typed.umd.js"></script>
+<script src="/js/muppets.js"></script>
+<script src="/js/easteregg.js"></script>

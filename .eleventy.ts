@@ -14,6 +14,7 @@ const imagify = async (src, options = {}) => {
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/js');
+  eleventyConfig.addPassthroughCopy('src/CNAME');
 
   eleventyConfig.addPlugin(i18n, {
     localesDirectory: 'locales',

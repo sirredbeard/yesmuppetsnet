@@ -1,8 +1,8 @@
 // the sequence
-const nohelloCode = ['h', 'e', 'l', 'l', 'o'];
+const muppetCode = ['m', 'u', 'p', 'p', 'e', 't'];
 
 // a variable to remember the 'position' the user has reached so far.
-let nohelloCodePosition = 0;
+let muppetCodePosition = 0;
 
 function activateWut() {
   // @ts-ignore
@@ -39,24 +39,24 @@ function activateWut() {
 // add keydown event listener
 document.addEventListener('keydown', (e) => {
   // get the value of the required key from the code
-  const requiredKey = nohelloCode[nohelloCodePosition];
+  const requiredKey = muppetCode[muppetCodePosition];
 
   // compare the key with the required key
   if (e.key === requiredKey) {
     // move to the next key in the  sequence
-    nohelloCodePosition += 1;
+    muppetCodePosition += 1;
 
     // if the last key is reached, activate wut
-    if (nohelloCodePosition === nohelloCode.length) {
+    if (muppetCodePosition === muppetCode.length) {
       activateWut();
-      nohelloCodePosition = 0;
-    } else if (nohelloCodePosition === 2) {
+      muppetCodePosition = 0;
+    } else if (muppetCodePosition === 2) {
       const preload = document.getElementById('preloadimg');
       if (preload != null) {
         preload.classList.add('now');
       }
     }
   } else {
-    nohelloCodePosition = 0;
+    muppetCodePosition = 0;
   }
 });

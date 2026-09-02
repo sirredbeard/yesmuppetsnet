@@ -11,14 +11,14 @@ jobs:
   update-snapshots:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
       - run: yarn install
       - run: npx playwright install --with-deps chromium
       - run: yarn ci:ui:update
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: ui-snapshots
@@ -27,15 +27,15 @@ jobs:
   check-snapshots:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
       - run: yarn install
       - run: npx playwright install --with-deps chromium
       - run: fc-list
       - run: yarn ci:ui
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: ui-test-results

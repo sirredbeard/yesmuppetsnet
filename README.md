@@ -1,24 +1,26 @@
-# No Hello
+# Yes Muppets
 
-Hello!
+no meeting starts before the muppets
 
-https://nohello.net/
+https://yesmuppets.net/
 
-## Translators
+A fork of [nohello.net](https://nohello.net/) ([source](https://github.com/nohello-net/site)),
+with the same design, font, and layout - deadpan about a different rule: **you cannot start a
+meeting until you've shown a picture of art you made featuring the Muppets.** The meeting cannot
+go on without the muppets.
 
-We've added language support to the site, but are still working out the best workflow for people to submit translations. (There's a small amount of manual work required on the code side!)
-
-If you'd like to submit a translation, you can find us on [Transifex](https://www.transifex.com/nohello/nohellodotnet/). I _think_ you can suggest translations directly on their site without needing an invite to the organisation, but I'm not sure exactly. Let us know! Let's figure it out.
-
-Either way, open an issue on our GitHub repo, and we'll work out the best way to proceed :)
+Not affiliated with Disney, The Muppets Studio, or nohello.net.
 
 ## Programmers
 
-This project is a [Eleventy](https://www.11ty.dev/) site. If you've used a static site generator before, you're pretty much good to go. If not, take a look through the [Eleventy documentation](https://www.11ty.dev/docs/) to get up to speed.
+This project is a [Eleventy](https://www.11ty.dev/) site. If you've used a static site generator
+before, you're pretty much good to go. If not, take a look through the
+[Eleventy documentation](https://www.11ty.dev/docs/) to get up to speed.
 
 ### Getting Started
 
-It's a JavaScript site, so you'll need `node` installed. Using [nvm](https://github.com/nvm-sh/nvm) will make sure you're using the right version.
+It's a JavaScript site, so you'll need `node` installed. Using [nvm](https://github.com/nvm-sh/nvm)
+will make sure you're using the right version.
 
 ```sh
 # git clone, etc
@@ -32,7 +34,9 @@ Then open [localhost:8123](http://localhost:8123/) in your browser, and you shou
 
 Unit tests are via Mocha. Nothing too fancy there.
 
-We use UI tests via [Playwright](https://playwright.dev/). To ensure consistency, the snapshots are taken with a Linux container. To run this locally for convenience, you'll need two things installed: [Docker](https://docs.docker.com/desktop/mac/install/) and [act](https://github.com/nektos/act).
+We use UI tests via [Playwright](https://playwright.dev/). To ensure consistency, the snapshots are
+taken with a Linux container. To run this locally for convenience, you'll need two things installed:
+[Docker](https://docs.docker.com/desktop/mac/install/) and [act](https://github.com/nektos/act).
 
 Available commands:
 
@@ -41,10 +45,15 @@ yarn check-snapshots  # do your snapshots match?
 yarn update-snapshots # if not, update your snapshots!
 ```
 
-### Translations
+### Language support
 
-- we use [Transifex](https://www.transifex.com/)
-- we use [Transifex CLI](https://github.com/transifex/cli/releases) (currently no `brew` package!)
-- the base language is English
+1.0 is English-only. The original [nohello.net](https://github.com/nohello-net/site) has
+multi-language support if you're looking for a reference on how to add it back.
 
-Changed base strings? `yarn strings:push`. Updated translations? `yarn strings:pull`.
+### Deployment
+
+The site builds to static HTML in `build/` and is deployed to GitHub Pages by
+`.github/workflows/deploy.yml` on every push to `main`. The custom domain (`yesmuppets.net`) is
+configured via `src/CNAME` and pointed at GitHub Pages through Cloudflare DNS (a `CNAME`/`ALIAS`
+record at the apex, or `www` + apex redirect, both proxied or DNS-only per GitHub's
+[custom domain docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)).
